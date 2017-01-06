@@ -3,7 +3,7 @@ package saravanan.mars;
 public class Rover extends Point {
 	
 	private String name = "";
-	private String Hitting = "";
+	private String hitting = "";
 	protected Direction dir;
 	private RoverMovement roverMove ;
 	
@@ -25,39 +25,39 @@ public class Rover extends Point {
 		this.y = p.y;
 	}
 	
-	public void Actions(String side)	{
+	public void actions(String side)	{
 		for (char ch : side.toCharArray()) {
-			if (! Action(String.valueOf(ch)))
+			if (! action(String.valueOf(ch)))
 				break;
 		}
 	}
 
-	public boolean Action(String side)
+	public boolean action(String side)
 	{
-			boolean NoObstacle = true;
+			boolean noObstacle = true;
 			switch (side.toUpperCase()) {
 				case "L":
-					dir = dir.Left(dir);
+					dir = dir.left(dir);
 					break;
 				case "R":
-					dir = dir.Right(dir);
+					dir = dir.right(dir);
 					break;
 				case "F":
-					NoObstacle = roverMove.Forward();
+					noObstacle = roverMove.Forward();
 					break;
 				case "B":
-					NoObstacle = roverMove.Backword();
+					noObstacle = roverMove.Backword();
 					break;
 			}
 			
-			if (NoObstacle )
-				Hitting = ""; 
+			if (noObstacle )
+				hitting = ""; 
 			else
-				Hitting = " - Hit ";
+				hitting = " - Hit ";
 			
 			System.out.println(side.toUpperCase() + "  " + this);
 			
-			return NoObstacle;
+			return noObstacle;
 
 	}
 	
@@ -66,7 +66,7 @@ public class Rover extends Point {
 	}
 
 	public String getHitting() {
-		return Hitting;
+		return hitting;
 	}	
 
 	

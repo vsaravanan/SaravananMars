@@ -14,7 +14,7 @@ public class RoverMovement {
 	}
 
 
-	private boolean Move(int StraightOpposite)
+	private boolean move(int straightOpposite)
 	{
 	
 
@@ -25,21 +25,21 @@ public class RoverMovement {
 			switch (rover.dir)
 			{
 				case NORTH :
-					p.y = p.y + StraightOpposite;
+					p.y = p.y + straightOpposite;
 					break;
 				case SOUTH :
-					p.y = p.y - StraightOpposite;
+					p.y = p.y - straightOpposite;
 					break;
 				case EAST :
-					p.x = p.x + StraightOpposite;
+					p.x = p.x + straightOpposite;
 					break;
 				case WEST :
-					p.x = p.x - StraightOpposite;
+					p.x = p.x - straightOpposite;
 					break;
 
 			}
 
-			Point newP = world.CheckBeforeGo(p);
+			Point newP = world.checkBeforeGo(p);
 			if (newP == null || oldP.equals(newP))
 			{
 				// obstacle hit
@@ -59,12 +59,12 @@ public class RoverMovement {
 	
 	public boolean Forward()
 	{
-		return Move(1);
+		return move(1);
 	}
 	
 	public boolean Backword()
 	{
-		return Move(-1);
+		return move(-1);
 	}
 
 }

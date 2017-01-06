@@ -26,11 +26,11 @@ public enum Direction {
 	
 	// intentionally hard coded 4 for 4 sides
 	// improve later
-	public Direction Left(Direction dir) {
+	public Direction left(Direction dir) {
 		int newValue = (dir.getValue() + 4 - 1) % 4;
 		return Direction.values()[newValue];
 	}
-	public Direction Right(Direction dir) {
+	public Direction right(Direction dir) {
 		int newValue = (dir.getValue() + 4 + 1) % 4;
 		return Direction.values()[newValue];
 	}

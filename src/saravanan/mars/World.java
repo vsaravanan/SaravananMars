@@ -28,7 +28,7 @@ public class World {
 		obstacles.add(obs);
 	}
 
-	private Point WrapOnEdge(Point p)
+	private Point wrapOnEdge(Point p)
 	{
 		if (p.x < 1 )
 			p.x = this.maxX;
@@ -43,10 +43,10 @@ public class World {
 		return p;
 	}
 	
-	public Point CheckBeforeGo(Point p)
+	public Point checkBeforeGo(Point p)
 	{
 		
-		p = WrapOnEdge(p);
+		p = wrapOnEdge(p);
 		
 		for (Obstacle obstacle : obstacles)
 		{
